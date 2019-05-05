@@ -31,3 +31,22 @@ var data = [{
         categories: []
     },
 ];
+
+
+for (var i of data) {
+    console.log(i);
+    //create boxes
+    var box = document.createElement('div');
+    document.body.appendChild(box);
+    //add ids to boxes
+    box.id = i.id;
+    //add headders
+    var header = document.createElement('header');
+    //add titles to headders
+    header.innerText = i.title;
+    box.appendChild(header);
+    // add content to boxes
+    box.innerHTML += i.content;
+    //add classes to boxes
+    box.className = i.categories.join(' ');
+}
